@@ -13,7 +13,7 @@ state_req = req.status_code
 # verificamos que el estado sea 200
 if state_req == 200:
  	# pasamos el contenido de la web a un objeto BeautifulSoup
- 	html_twitter = BeautifulSoup(req.text)
+ 	html_twitter = BeautifulSoup(req.text,'html.parser')
 
  	# obtenemos la informacion del usuario
  	info_user = html_twitter.find_all('div',{'class':'ProfileHeaderCard'})
